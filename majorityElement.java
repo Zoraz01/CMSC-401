@@ -1,6 +1,8 @@
 //Zoraz Haseeb
 class majorityElement{
     public static void main(String[] args){
+        int [] test = [3,3,3,7,7,4,7,7,7,8];
+        System.out.print(getMajority(test));
 
     }
     public int getMajority(int [] arr){
