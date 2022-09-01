@@ -1,8 +1,13 @@
 //Zoraz Haseeb
 class majorityElement{
     public static void main(String[] args){
-        int [] test = {1,2,1,2,3,1,2,1,1,2,1,2,2,2,2,2};
-        System.out.print(getMajority(test));
+        Scanner sc = new Scanner(System.in);
+        int loopNumber = sc.nextInt();
+        int [] arr = new int [loopNumber];
+        for(int i =0; i < loopNumber;i++){
+            arr[i] = sc.nextInt;
+        }
+        System.out.print(getMajority(arr));
 
     }
     public static int getMajority(int [] arr){
