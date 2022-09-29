@@ -1,11 +1,12 @@
 //Zoraz Haseeb
+import java.util.Scanner;
 class majorityElement{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int loopNumber = sc.nextInt();
         int [] arr = new int [loopNumber];
         for(int i =0; i < loopNumber;i++){
-            arr[i] = sc.nextInt;
+            arr[i] = sc.nextInt();
         }
         System.out.print(getMajority(arr));
 
