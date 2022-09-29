@@ -6,22 +6,31 @@ class garden{
         int numberOfGardens = sc.nextInt();
         int [] y = new int[numberOfGardens];
         int [] size = new int[numberOfGardens];
-        int sum1 = 0; 
-        int sum2 = 0;
+        int maxY = Integer.MIN_VALUE; 
+        int minY = Integer.MAX_VALUE;
         for(int i =0; i < numberOfGardens; i++){
             y[i] = sc.nextInt();
             size[i] = sc.nextInt();
-            sum1 = sum1 + size[i] * size[i] * y[i];
-            sum2 = sum2 + size[i] * size[i];
+            maxY = Math.max(maxY,y[i]);
+            minY = Math.min(minY,y[i]);
         }
-        int x =  sum1 / sum2;
-        double totalCost = 0;
-        for(int i =0; i < numberOfGardens;i++){
-            totalCost = totalCost + Math.abs(x - y[i] * size[i]);
-        }
-        System.out.println((int) x);
-        System.out.println((int)totalCost);
 
+
+        int opt = getOptimalLength(y,size,maxY,minY); 
+        System.out.println(opt);
+
+
+    }
+    public static int getOptimalLength(int[] y, int [] size, int max, int x){
+        if(x > max){
+            return Integer.MAX_VALUE; 
+        }
+        int sum = 0;
+
+        for(int i =0; i < y.length;i++){
+            sum = sum + Math.abs(((x - y[i]) * size[i])); 
+        }
+        return Math.min(sum,getOptimalLength(y, size, max, x+1));
     }
 
 }
